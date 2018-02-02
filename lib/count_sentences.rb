@@ -16,7 +16,18 @@ class String
 
   def count_sentences
     # period, question, bang
-    x = self.split(/\.|\?|\!/).delete_if {|w| w.size < 2}.size
+    #self.split(/\.|\?|\!/).delete_if {|w| w.size < 2}.size
 
+    #counting puntuations
+    split_arr = []
+    count = 0
+    split_arr = self.split
+    split_arr.each do |char|
+      if char == "." || "?" || "!"
+        count += 1
+      end
+    end
+    count
   end
+
 end
